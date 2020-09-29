@@ -356,6 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.caferlop.Shopping;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iOS";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -379,6 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.caferlop.Shopping;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iOS";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
