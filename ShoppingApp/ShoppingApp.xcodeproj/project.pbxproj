@@ -16,6 +16,8 @@
 		9632D1852523C95800217E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D1832523C95800217E20 /* LaunchScreen.storyboard */; };
 		9632D1902523C95800217E20 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D18F2523C95800217E20 /* ShoppingAppTests.swift */; };
 		9632D19B2523C95800217E20 /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D19A2523C95800217E20 /* ShoppingAppUITests.swift */; };
+		969D307A252BADC300478074 /* Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; };
+		969D307B252BADC300478074 /* Shopping.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		969D307C252BADC300478074 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				969D307B252BADC300478074 /* Shopping.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9632D1722523C95600217E20 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632D1752523C95600217E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +67,7 @@
 		9632D1962523C95800217E20 /* ShoppingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632D19A2523C95800217E20 /* ShoppingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITests.swift; sourceTree = "<group>"; };
 		9632D19C2523C95800217E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969D3079252BADC300478074 /* Shopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969D307A252BADC300478074 /* Shopping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +103,7 @@
 				9632D18E2523C95800217E20 /* ShoppingAppTests */,
 				9632D1992523C95800217E20 /* ShoppingAppUITests */,
 				9632D1732523C95600217E20 /* Products */,
+				969D3078252BADC300478074 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +150,14 @@
 			path = ShoppingAppUITests;
 			sourceTree = "<group>";
 		};
+		969D3078252BADC300478074 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				969D3079252BADC300478074 /* Shopping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +168,7 @@
 				9632D16E2523C95600217E20 /* Sources */,
 				9632D16F2523C95600217E20 /* Frameworks */,
 				9632D1702523C95600217E20 /* Resources */,
+				969D307C252BADC300478074 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

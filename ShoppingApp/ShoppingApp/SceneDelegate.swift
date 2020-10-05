@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Shopping
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
