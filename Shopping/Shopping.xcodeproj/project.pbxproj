@@ -10,6 +10,10 @@
 		9632D1C22523C9E000217E20 /* Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9632D1B82523C9DF00217E20 /* Shopping.framework */; };
 		9632D1C72523C9E000217E20 /* ShoppingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D1C62523C9E000217E20 /* ShoppingTests.swift */; };
 		9632D1C92523C9E000217E20 /* Shopping.h in Headers */ = {isa = PBXBuildFile; fileRef = 9632D1BB2523C9DF00217E20 /* Shopping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		969D300C252B6B2600478074 /* HTTPRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D300B252B6B2600478074 /* HTTPRequestProtocol.swift */; };
+		969D3014252B6ECD00478074 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3013252B6ECD00478074 /* HTTPError.swift */; };
+		969D301C252B6FCA00478074 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D301B252B6FCA00478074 /* HTTPClient.swift */; };
+		969D3024252B74C600478074 /* ProductFeedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3023252B74C600478074 /* ProductFeedRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		9632D1C12523C9E000217E20 /* ShoppingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632D1C62523C9E000217E20 /* ShoppingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTests.swift; sourceTree = "<group>"; };
 		9632D1C82523C9E000217E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969D300B252B6B2600478074 /* HTTPRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestProtocol.swift; sourceTree = "<group>"; };
+		969D3013252B6ECD00478074 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		969D301B252B6FCA00478074 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		969D3023252B74C600478074 /* ProductFeedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeedRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		9632D1AE2523C9DF00217E20 = {
 			isa = PBXGroup;
 			children = (
+				969D3008252B6A8500478074 /* Persistence */,
+				969D3007252B6A4400478074 /* HTTPRequest */,
 				9632D1BA2523C9DF00217E20 /* Shopping */,
 				9632D1C52523C9E000217E20 /* ShoppingTests */,
 				9632D1B92523C9DF00217E20 /* Products */,
@@ -84,6 +94,56 @@
 				9632D1C82523C9E000217E20 /* Info.plist */,
 			);
 			path = ShoppingTests;
+			sourceTree = "<group>";
+		};
+		969D3007252B6A4400478074 /* HTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				969D300B252B6B2600478074 /* HTTPRequestProtocol.swift */,
+				969D3009252B6AE400478074 /* HTTPClient */,
+				969D300A252B6AF600478074 /* EndPoints */,
+				969D3011252B6B5C00478074 /* Error */,
+				969D3012252B6B6600478074 /* Result */,
+			);
+			path = HTTPRequest;
+			sourceTree = "<group>";
+		};
+		969D3008252B6A8500478074 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		969D3009252B6AE400478074 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				969D301B252B6FCA00478074 /* HTTPClient.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		969D300A252B6AF600478074 /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+				969D3023252B74C600478074 /* ProductFeedRequest.swift */,
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		969D3011252B6B5C00478074 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				969D3013252B6ECD00478074 /* HTTPError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		969D3012252B6B6600478074 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +207,7 @@
 				TargetAttributes = {
 					9632D1B72523C9DF00217E20 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 					9632D1C02523C9E000217E20 = {
 						CreatedOnToolsVersion = 12.0;
@@ -194,6 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969D301C252B6FCA00478074 /* HTTPClient.swift in Sources */,
+				969D3014252B6ECD00478074 /* HTTPError.swift in Sources */,
+				969D3024252B74C600478074 /* ProductFeedRequest.swift in Sources */,
+				969D300C252B6B2600478074 /* HTTPRequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +405,7 @@
 		9632D1CD2523C9E000217E20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -357,6 +423,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iOS";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -364,6 +431,7 @@
 		9632D1CE2523C9E000217E20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -388,6 +456,7 @@
 		9632D1D02523C9E000217E20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ShoppingTests/Info.plist;
@@ -405,6 +474,7 @@
 		9632D1D12523C9E000217E20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ShoppingTests/Info.plist;
