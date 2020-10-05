@@ -38,45 +38,6 @@ class HTTPClientTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClientProtocol {
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = URLSession(configuration: configuration)
-        
-        let sut = HTTPClient(session: session)
-        trackForMemoryLeaks(sut, file: file, line: line)
-        return sut
-    }
-    
-    private func makeRequest(file: StaticString = #file, line: UInt = #line) -> HTTPRequest {
-        let dummyRequest = RequestStub()
-        return dummyRequest
-    }
-    
-    private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil, taskHandler: (HTTPClientTask) -> Void = { _ in }, file: StaticString = #filePath, line: UInt = #line) -> Error? {
-        let result = resultFor(values, taskHandler: taskHandler, file: file, line: line)
-        
-        switch result {
-        case let .failure(error):
-            return error
-        default:
-            XCTFail("Expected failure, got \(result) instead", file: file, line: line)
-            return nil
-        }
-    }
-    
-    private func resultValuesFor(_ values: (data: Data?, response: URLResponse?, error: Error?), file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
-        let result = resultFor(values, file: file, line: line)
-
-        switch result {
-        case let .success(values):
-            return values
-        default:
-            XCTFail("Expected success, got \(result) instead", file: file, line: line)
-            return nil
-        }
-    }
-    
     func test_cancelGetFromURLTask_cancelsURLRequest() {
         let receivedError = resultErrorFor(taskHandler: { $0.cancel() }) as NSError?
 
@@ -123,6 +84,45 @@ class HTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.data, emptyData)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
+    }
+    
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClientProtocol {
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = URLSession(configuration: configuration)
+        
+        let sut = HTTPClient(session: session)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
+    }
+    
+    private func makeRequest(file: StaticString = #file, line: UInt = #line) -> HTTPRequest {
+        let dummyRequest = RequestStub()
+        return dummyRequest
+    }
+    
+    private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil, taskHandler: (HTTPClientTask) -> Void = { _ in }, file: StaticString = #filePath, line: UInt = #line) -> Error? {
+        let result = resultFor(values, taskHandler: taskHandler, file: file, line: line)
+        
+        switch result {
+        case let .failure(error):
+            return error
+        default:
+            XCTFail("Expected failure, got \(result) instead", file: file, line: line)
+            return nil
+        }
+    }
+    
+    private func resultValuesFor(_ values: (data: Data?, response: URLResponse?, error: Error?), file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
+        let result = resultFor(values, file: file, line: line)
+
+        switch result {
+        case let .success(values):
+            return values
+        default:
+            XCTFail("Expected success, got \(result) instead", file: file, line: line)
+            return nil
+        }
     }
     
     private func resultFor(_ values: (data: Data?, response: URLResponse?, error: Error?)?, taskHandler: (HTTPClientTask) -> Void = { _ in },  file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {
