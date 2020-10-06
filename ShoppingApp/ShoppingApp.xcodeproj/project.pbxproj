@@ -17,7 +17,7 @@
 		9632D1902523C95800217E20 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D18F2523C95800217E20 /* ShoppingAppTests.swift */; };
 		9632D19B2523C95800217E20 /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D19A2523C95800217E20 /* ShoppingAppUITests.swift */; };
 		969D307A252BADC300478074 /* Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; };
-		969D307B252BADC300478074 /* Shopping.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		969D307B252BADC300478074 /* Shopping.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

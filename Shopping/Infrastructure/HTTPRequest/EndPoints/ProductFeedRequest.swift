@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct ProductFeedRequest {}
+public struct ProductFeedRequest {
+    public init () {}
+}
 
 extension ProductFeedRequest: HTTPRequest {
-    var url: URL {
+    public var url: URL {
         return URL(staticString: "https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327fa557859c2f/raw/ba51779474a150ee4367cda4f4ffacdcca479887/Products.json")
     }
     
-    var method: String {
+    public var method: String {
         return "GET"
     }
 }

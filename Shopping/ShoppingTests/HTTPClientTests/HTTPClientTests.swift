@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Shopping
+import Shopping
 
 class HTTPClientTests: XCTestCase {
 
@@ -86,20 +86,16 @@ class HTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
     }
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClientProtocol {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = URLSession(configuration: configuration)
         
-        let sut = HTTPClient(session: session)
+        let sut = HTTPClientService(session: session)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
     
-    private func makeRequest(file: StaticString = #file, line: UInt = #line) -> HTTPRequest {
-        let dummyRequest = RequestStub()
-        return dummyRequest
-    }
     
     private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil, taskHandler: (HTTPClientTask) -> Void = { _ in }, file: StaticString = #filePath, line: UInt = #line) -> Error? {
         let result = resultFor(values, taskHandler: taskHandler, file: file, line: line)
@@ -132,7 +128,7 @@ class HTTPClientTests: XCTestCase {
         let exp = expectation(description: "Wait for completion")
         
         var receivedResult: HTTPClient.Result!
-        taskHandler(sut.sendRequest(request: makeRequest(), completionHandler: { result in
+        taskHandler(sut.sendRequest(request: makeRequest(), completion: { result in
             receivedResult = result
             exp.fulfill()
         }))

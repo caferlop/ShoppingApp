@@ -17,6 +17,15 @@
 		969D3040252B8F8600478074 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D303F252B8F8600478074 /* HTTPClientTests.swift */; };
 		969D3044252B902A00478074 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3043252B902A00478074 /* TestHelpers.swift */; };
 		969D3068252B94BD00478074 /* RequestStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3067252B94BD00478074 /* RequestStub.swift */; };
+		969D3081252BAEFA00478074 /* ProductFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3080252BAEFA00478074 /* ProductFeed.swift */; };
+		969D3087252BAF0A00478074 /* ProductLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3086252BAF0A00478074 /* ProductLoader.swift */; };
+		969D3091252BB1E700478074 /* RemoteProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3090252BB1E700478074 /* RemoteProductItem.swift */; };
+		969D3095252BB21600478074 /* RemoteProductLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3094252BB21600478074 /* RemoteProductLoader.swift */; };
+		969D3099252BB25400478074 /* RemoteProductMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D3098252BB25400478074 /* RemoteProductMapper.swift */; };
+		969D30A0252C4D4500478074 /* RemoteProductLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D309F252C4D4500478074 /* RemoteProductLoaderTests.swift */; };
+		969D30AB252C503A00478074 /* HTTPClientServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D30AA252C503A00478074 /* HTTPClientServiceSpy.swift */; };
+		969D30B6252C688400478074 /* SharedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D30B5252C688400478074 /* SharedHelpers.swift */; };
+		969D30C0252C801000478074 /* ProductApiEntToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D30BF252C801000478074 /* ProductApiEntToEndTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +52,15 @@
 		969D303F252B8F8600478074 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		969D3043252B902A00478074 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		969D3067252B94BD00478074 /* RequestStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStub.swift; sourceTree = "<group>"; };
+		969D3080252BAEFA00478074 /* ProductFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeed.swift; sourceTree = "<group>"; };
+		969D3086252BAF0A00478074 /* ProductLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLoader.swift; sourceTree = "<group>"; };
+		969D3090252BB1E700478074 /* RemoteProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProductItem.swift; sourceTree = "<group>"; };
+		969D3094252BB21600478074 /* RemoteProductLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProductLoader.swift; sourceTree = "<group>"; };
+		969D3098252BB25400478074 /* RemoteProductMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProductMapper.swift; sourceTree = "<group>"; };
+		969D309F252C4D4500478074 /* RemoteProductLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProductLoaderTests.swift; sourceTree = "<group>"; };
+		969D30AA252C503A00478074 /* HTTPClientServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientServiceSpy.swift; sourceTree = "<group>"; };
+		969D30B5252C688400478074 /* SharedHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedHelpers.swift; sourceTree = "<group>"; };
+		969D30BF252C801000478074 /* ProductApiEntToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiEntToEndTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,7 @@
 		9632D1AE2523C9DF00217E20 = {
 			isa = PBXGroup;
 			children = (
+				969D307F252BAEAF00478074 /* ProductFeed */,
 				969D3075252BAD3F00478074 /* Infrastructure */,
 				9632D1BA2523C9DF00217E20 /* Shopping */,
 				9632D1C52523C9E000217E20 /* ShoppingTests */,
@@ -94,6 +113,8 @@
 		9632D1C52523C9E000217E20 /* ShoppingTests */ = {
 			isa = PBXGroup;
 			children = (
+				969D30B4252C686D00478074 /* SharedHelpers */,
+				969D309E252C4C5900478074 /* RemoteApiTests */,
 				969D3033252B8E8E00478074 /* Helpers */,
 				969D3032252B8DA800478074 /* HTTPClientTests */,
 				9632D1C62523C9E000217E20 /* ShoppingTests.swift */,
@@ -169,6 +190,60 @@
 				969D3007252B6A4400478074 /* HTTPRequest */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		969D307F252BAEAF00478074 /* ProductFeed */ = {
+			isa = PBXGroup;
+			children = (
+				969D308D252BB04500478074 /* LocalProductLoader */,
+				969D308A252BAF7000478074 /* RemoteProductLoader */,
+				969D3080252BAEFA00478074 /* ProductFeed.swift */,
+				969D3086252BAF0A00478074 /* ProductLoader.swift */,
+			);
+			path = ProductFeed;
+			sourceTree = "<group>";
+		};
+		969D308A252BAF7000478074 /* RemoteProductLoader */ = {
+			isa = PBXGroup;
+			children = (
+				969D3090252BB1E700478074 /* RemoteProductItem.swift */,
+				969D3094252BB21600478074 /* RemoteProductLoader.swift */,
+				969D3098252BB25400478074 /* RemoteProductMapper.swift */,
+			);
+			path = RemoteProductLoader;
+			sourceTree = "<group>";
+		};
+		969D308D252BB04500478074 /* LocalProductLoader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalProductLoader;
+			sourceTree = "<group>";
+		};
+		969D309E252C4C5900478074 /* RemoteApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				969D30A9252C500800478074 /* Helpers */,
+				969D309F252C4D4500478074 /* RemoteProductLoaderTests.swift */,
+				969D30BF252C801000478074 /* ProductApiEntToEndTests.swift */,
+			);
+			path = RemoteApiTests;
+			sourceTree = "<group>";
+		};
+		969D30A9252C500800478074 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				969D30AA252C503A00478074 /* HTTPClientServiceSpy.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		969D30B4252C686D00478074 /* SharedHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				969D30B5252C688400478074 /* SharedHelpers.swift */,
+			);
+			path = SharedHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +376,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				969D301C252B6FCA00478074 /* HTTPClient.swift in Sources */,
+				969D3095252BB21600478074 /* RemoteProductLoader.swift in Sources */,
+				969D3081252BAEFA00478074 /* ProductFeed.swift in Sources */,
 				969D3024252B74C600478074 /* ProductFeedRequest.swift in Sources */,
+				969D3091252BB1E700478074 /* RemoteProductItem.swift in Sources */,
+				969D3087252BAF0A00478074 /* ProductLoader.swift in Sources */,
+				969D3099252BB25400478074 /* RemoteProductMapper.swift in Sources */,
 				969D300C252B6B2600478074 /* HTTPRequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969D30A0252C4D4500478074 /* RemoteProductLoaderTests.swift in Sources */,
+				969D30C0252C801000478074 /* ProductApiEntToEndTests.swift in Sources */,
+				969D30AB252C503A00478074 /* HTTPClientServiceSpy.swift in Sources */,
+				969D30B6252C688400478074 /* SharedHelpers.swift in Sources */,
 				969D3036252B8EC300478074 /* MemoryLeakTracker.swift in Sources */,
 				969D3068252B94BD00478074 /* RequestStub.swift in Sources */,
 				969D3044252B902A00478074 /* TestHelpers.swift in Sources */,
@@ -455,9 +539,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -470,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.caferlop.Shopping;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iOS";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -481,9 +567,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -496,6 +583,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.caferlop.Shopping;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iOS";
 				SWIFT_VERSION = 5.0;

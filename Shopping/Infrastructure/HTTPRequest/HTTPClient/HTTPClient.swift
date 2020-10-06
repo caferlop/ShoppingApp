@@ -11,13 +11,13 @@ public protocol HTTPClientTask {
     func cancel()
 }
 
-protocol HTTPClientProtocol{
+public protocol HTTPClient {
     typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
     @discardableResult
-    func sendRequest(request: HTTPRequest, completionHandler: @escaping(Result) -> Void) -> HTTPClientTask
+    func sendRequest(request: HTTPRequest, completion: @escaping(Result) -> Void) -> HTTPClientTask
 }
 
-class HTTPClient {
+public class HTTPClientService {
     private let session: URLSession
     public init(session: URLSession) {
         self.session = session
@@ -34,11 +34,11 @@ class HTTPClient {
     }
 }
 
-extension HTTPClient: HTTPClientProtocol {
-    func sendRequest(request: HTTPRequest, completionHandler: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+extension HTTPClientService: HTTPClient {
+    public func sendRequest(request: HTTPRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
         let newRequest = request.asUrlRequest()
         let task = session.dataTask(with: newRequest) { data, response, error in
-            completionHandler(Result {
+            completion(Result {
                 if let error = error {
                     throw error
                 } else if let data = data, let response = response as? HTTPURLResponse {
