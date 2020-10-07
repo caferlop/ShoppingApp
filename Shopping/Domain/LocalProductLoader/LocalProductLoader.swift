@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class LocalProductLoader: ProductLoader {
+public final class LocalProductLoader: ProductFeedLoader {
     
     private let store: ProductFeedStore
     private let currentDate: () -> Date
@@ -17,7 +17,7 @@ public final class LocalProductLoader: ProductLoader {
         self.currentDate = currentDate
     }
     
-    public typealias LoadProductResult = ProductLoader.Result
+    public typealias LoadProductResult = ProductFeedLoader.Result
     
     public func load(completion: @escaping (LoadProductResult) -> Void) {
         

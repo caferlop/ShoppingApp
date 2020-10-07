@@ -29,7 +29,7 @@ class ProductApiEntToEndTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func getProductFeedResult(file: StaticString = #file, line: UInt = #line) -> ProductLoader.Result? {
+    private func getProductFeedResult(file: StaticString = #file, line: UInt = #line) -> ProductFeedLoader.Result? {
         let request = ProductFeedRequest()
         let client = HTTPClientService(session: URLSession(configuration: .ephemeral))
         
@@ -39,7 +39,7 @@ class ProductApiEntToEndTests: XCTestCase {
         
         let exp = expectation(description: "Wait for products to load")
         
-        var receivedResult: ProductLoader.Result?
+        var receivedResult: ProductFeedLoader.Result?
         productLoader.load { result in
             receivedResult = result
             exp.fulfill()

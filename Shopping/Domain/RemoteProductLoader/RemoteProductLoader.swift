@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemoteProductLoader: ProductLoader {
+public final class RemoteProductLoader: ProductFeedLoader {
     
     private let request: HTTPRequest
     private let client: HTTPClient
@@ -17,7 +17,7 @@ public final class RemoteProductLoader: ProductLoader {
         case invalidaData
     }
     
-    public typealias Result = ProductLoader.Result
+    public typealias Result = ProductFeedLoader.Result
     
     public init(request: HTTPRequest, client: HTTPClient) {
         self.request = request
