@@ -109,8 +109,8 @@
 		9632D1AE2523C9DF00217E20 = {
 			isa = PBXGroup;
 			children = (
-				969D307F252BAEAF00478074 /* ProductFeed */,
-				969D3075252BAD3F00478074 /* Infrastructure */,
+				969D307F252BAEAF00478074 /* Domain */,
+				969D3075252BAD3F00478074 /* DataInfrastructure */,
 				9632D1BA2523C9DF00217E20 /* Shopping */,
 				9632D1C52523C9E000217E20 /* ShoppingTests */,
 				9632D1B92523C9DF00217E20 /* Products */,
@@ -159,6 +159,7 @@
 		969D3008252B6A8500478074 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				969D30CB252CB10300478074 /* CoreData */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -197,24 +198,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		969D3075252BAD3F00478074 /* Infrastructure */ = {
+		969D3075252BAD3F00478074 /* DataInfrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				969D3008252B6A8500478074 /* Persistence */,
 				969D3007252B6A4400478074 /* HTTPRequest */,
 			);
-			path = Infrastructure;
+			path = DataInfrastructure;
 			sourceTree = "<group>";
 		};
-		969D307F252BAEAF00478074 /* ProductFeed */ = {
+		969D307F252BAEAF00478074 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				969D3157252E0D5100478074 /* ProductFeed */,
 				969D308D252BB04500478074 /* LocalProductLoader */,
 				969D308A252BAF7000478074 /* RemoteProductLoader */,
-				969D3080252BAEFA00478074 /* ProductFeed.swift */,
-				969D3086252BAF0A00478074 /* ProductLoader.swift */,
 			);
-			path = ProductFeed;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		969D308A252BAF7000478074 /* RemoteProductLoader */ = {
@@ -230,7 +230,6 @@
 		969D308D252BB04500478074 /* LocalProductLoader */ = {
 			isa = PBXGroup;
 			children = (
-				969D30CB252CB10300478074 /* CoreData */,
 				969D30D2252CB2C400478074 /* LocalProductItem.swift */,
 				969D30D6252CB39900478074 /* ProductFeedStore.swift */,
 				969D30DA252CB79100478074 /* LocalProductLoader.swift */,
@@ -296,6 +295,15 @@
 				969D3102252CD01F00478074 /* ProductFeedStoreSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		969D3157252E0D5100478074 /* ProductFeed */ = {
+			isa = PBXGroup;
+			children = (
+				969D3080252BAEFA00478074 /* ProductFeed.swift */,
+				969D3086252BAF0A00478074 /* ProductLoader.swift */,
+			);
+			path = ProductFeed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
