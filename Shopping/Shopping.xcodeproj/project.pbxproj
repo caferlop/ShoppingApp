@@ -137,10 +137,9 @@
 		9632D1C52523C9E000217E20 /* ShoppingTests */ = {
 			isa = PBXGroup;
 			children = (
-				969D3100252CCF2000478074 /* Persistance */,
 				969D30B4252C686D00478074 /* SharedHelpers */,
+				969D3100252CCF2000478074 /* Persistance */,
 				969D309E252C4C5900478074 /* RemoteApiTests */,
-				969D3032252B8DA800478074 /* HTTPClientTests */,
 				9632D1C62523C9E000217E20 /* ShoppingTests.swift */,
 				9632D1C82523C9E000217E20 /* Info.plist */,
 			);
@@ -243,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				969D30A9252C500800478074 /* Helpers */,
+				969D3032252B8DA800478074 /* HTTPClientTests */,
 				969D309F252C4D4500478074 /* RemoteProductLoaderTests.swift */,
 				969D30BF252C801000478074 /* ProductApiEntToEndTests.swift */,
 			);
