@@ -40,7 +40,7 @@ public final class LocalProductLoader: ProductLoader {
 extension LocalProductLoader {
     public typealias SaveResult = Result<Void, Error>
     
-    public func save(productFeed: [ProductFeed], completion : @escaping (SaveResult) -> Void) {
+    public func save(productFeed: [Product], completion : @escaping (SaveResult) -> Void) {
         store.deletePersistedFeed { [weak self] deletionResult in
             guard self != nil else { return }
              
@@ -55,7 +55,7 @@ extension LocalProductLoader {
         }
     }
     
-    private func persist(feed: [ProductFeed], with completion: @escaping (SaveResult) -> Void) {
+    private func persist(feed: [Product], with completion: @escaping (SaveResult) -> Void) {
         store.insert(feed: feed.toLocal(), timeStamp: currentDate()) { [weak self] insertionResult in
             guard self != nil else { return }
             completion(insertionResult)
@@ -63,14 +63,14 @@ extension LocalProductLoader {
     }
 }
 
-private extension Array where Element == ProductFeed {
+private extension Array where Element == Product {
     func toLocal() -> [LocalProductItem] {
         return map { LocalProductItem(code: $0.code, name: $0.name, price: $0.price) }
     }
 }
 
 private extension Array where Element == LocalProductItem {
-    func toModels() -> [ProductFeed] {
-        return map { ProductFeed(code: $0.code, name: $0.name, price: $0.price)  }
+    func toModels() -> [Product] {
+        return map { Product(code: $0.code, name: $0.name, price: $0.price)  }
     }
 }

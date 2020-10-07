@@ -123,8 +123,8 @@ class RemoteProductLoaderTests: XCTestCase {
         return .failure(error)
     }
     
-    private func makeItem(code: String, name: String, price: Float)-> (model: ProductFeed, json: [String: Any]) {
-        let item = ProductFeed(code: code, name: name, price: price)
+    private func makeItem(code: String, name: String, price: Float)-> (model: Product, json: [String: Any]) {
+        let item = Product(code: code, name: name, price: price)
         let json = ["code": code, "name": name, "price": price].compactMapValues { $0 }
         
         return (item, json)

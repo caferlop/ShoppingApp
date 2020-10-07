@@ -59,7 +59,7 @@ class ProductPersistenceEndToEndTests: XCTestCase {
         return sut
     }
     
-    private func save(feed: [ProductFeed], with loader: LocalProductLoader, file: StaticString = #file, line: UInt = #line) {
+    private func save(feed: [Product], with loader: LocalProductLoader, file: StaticString = #file, line: UInt = #line) {
         let saveExp = expectation(description: "Wait for save completion")
         loader.save(productFeed: feed) { result in
             if case let Result.failure(error) = result {
@@ -70,7 +70,7 @@ class ProductPersistenceEndToEndTests: XCTestCase {
         wait(for: [saveExp], timeout: 1.0)
     }
     
-    private func expect(sut: LocalProductLoader, toLoad expectedFeed: [ProductFeed], file: StaticString = #file, line: UInt = #line) {
+    private func expect(sut: LocalProductLoader, toLoad expectedFeed: [Product], file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
         sut.load { result in
             switch result {

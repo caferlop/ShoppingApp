@@ -48,7 +48,7 @@ public final class RemoteProductLoader: ProductLoader {
 }
 
 private extension Array where Element == RemoteProductItem {
-    func toModels() -> [ProductFeed] {
-        return map { ProductFeed(code: $0.code, name: $0.name, price: $0.price) }
+    func toModels() -> [Product] {
+        return map { Product(code: $0.code, name: $0.name, price: $0.price) }
     }
 }

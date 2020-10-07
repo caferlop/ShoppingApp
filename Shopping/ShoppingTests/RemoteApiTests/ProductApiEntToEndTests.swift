@@ -11,9 +11,9 @@ import Shopping
 class ProductApiEntToEndTests: XCTestCase {
 
     func test_endToEnd() {
-        let voucher = ProductFeed(code: "VOUCHER", name: "Cabify Voucher", price: 5)
-        let tshirt = ProductFeed(code: "TSHIRT", name: "Cabify T-Shirt", price: 20)
-        let mug = ProductFeed(code: "MUG", name: "Cabify Coffee Mug", price: 7.5)
+        let voucher = Product(code: "VOUCHER", name: "Cabify Voucher", price: 5)
+        let tshirt = Product(code: "TSHIRT", name: "Cabify T-Shirt", price: 20)
+        let mug = Product(code: "MUG", name: "Cabify Coffee Mug", price: 7.5)
         switch getProductFeedResult() {
         case let .success(products)?:
             XCTAssertEqual(products.count, 3, "Got 3 products as expected")
