@@ -108,6 +108,8 @@ class RemoteProductLoaderTests: XCTestCase {
         
         XCTAssertTrue(capturedResults.isEmpty)
     }
+    
+    // MARK: - Helpers
 
     private func makeSUT(request: HTTPRequest, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteProductLoader, client: HTTPClientServiceSpy) {
         let client = HTTPClientServiceSpy()
@@ -134,7 +136,7 @@ class RemoteProductLoaderTests: XCTestCase {
     }
     
     private func expect(sut: RemoteProductLoader, toCompleteWith expectedResult: RemoteProductLoader.Result, when action: ()-> Void, file: StaticString = #file, line: UInt = #line) {
-        let exp = expectation(description: "Wait for loat to complete")
+        let exp = expectation(description: "Wait for load to complete")
         
         sut.load { receivedResult in
             switch (receivedResult, expectedResult) {

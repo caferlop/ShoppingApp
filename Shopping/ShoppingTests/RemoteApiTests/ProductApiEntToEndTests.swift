@@ -9,24 +9,6 @@ import XCTest
 import Shopping
 
 class ProductApiEntToEndTests: XCTestCase {
-    
-    //    "products": [
-    //        {
-    //          "code": "VOUCHER",
-    //          "name": "Cabify Voucher",
-    //          "price": 5
-    //        },
-    //        {
-    //          "code": "TSHIRT",
-    //          "name": "Cabify T-Shirt",
-    //          "price": 20
-    //        },
-    //        {
-    //          "code": "MUG",
-    //          "name": "Cabify Coffee Mug",
-    //          "price": 7.5
-    //        }
-    //      ]
 
     func test_endToEnd() {
         let voucher = ProductFeed(code: "VOUCHER", name: "Cabify Voucher", price: 5)
@@ -44,6 +26,8 @@ class ProductApiEntToEndTests: XCTestCase {
             XCTFail("Expected successful feed result, got no result instead")
         }
     }
+    
+    // MARK: - Helpers
     
     private func getProductFeedResult(file: StaticString = #file, line: UInt = #line) -> ProductLoader.Result? {
         let request = ProductFeedRequest()

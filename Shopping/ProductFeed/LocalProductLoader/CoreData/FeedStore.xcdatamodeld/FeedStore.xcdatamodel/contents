@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ManagedProductFeed" representedClassName="ManagedProductFeed" syncable="YES">
+        <attribute name="timeStamp" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="feed" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ManagedProductItem" inverseName="persistence" inverseEntity="ManagedProductItem"/>
+    </entity>
+    <entity name="ManagedProductItem" representedClassName="ManagedProductItem" syncable="YES">
+        <attribute name="code" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="persistence" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedProductFeed" inverseName="feed" inverseEntity="ManagedProductFeed"/>
+    </entity>
+    <elements>
+        <element name="ManagedProductFeed" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="ManagedProductItem" positionX="-54" positionY="-9" width="128" height="103"/>
+    </elements>
+</model>

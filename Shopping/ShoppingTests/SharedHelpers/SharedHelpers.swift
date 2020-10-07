@@ -13,4 +13,12 @@ extension XCTest {
         let dummyRequest = RequestStub()
         return dummyRequest
     }
+    
+    func makeFeed()-> (models: [ProductFeed], local: [LocalProductItem])  {
+        let productFeed1 = ProductFeed(code: "VOUCHER", name: "Cabify voucher", price: 10)
+        let productFeed2 = ProductFeed(code: "T-SHIRT", name: "Cabify T-Shirt", price: 5)
+        let models = [productFeed1, productFeed2]
+        let locals = models.map { LocalProductItem(code: $0.code, name: $0.name, price: $0.price) }
+        return (models, locals)
+    }
 }
