@@ -15,7 +15,6 @@ public protocol HTTPRequest {
 }
 
 extension HTTPRequest {
-
     public func asUrlRequest()  -> URLRequest {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = self.method
@@ -38,7 +37,6 @@ extension HTTPRequest {
     public var parameters: [String: Any]? {
         return nil
     }
-
 }
 
 // Define a non optional URL

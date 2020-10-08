@@ -9,7 +9,6 @@ import XCTest
 import Shopping
 
 class PriceCalculatorTests: XCTestCase {
-    
     func test_netPriceForProductList() {
         let sut = makePriceCalculator()
         let voucherList = makeListOfVoucher()
@@ -41,7 +40,6 @@ class PriceCalculatorTests: XCTestCase {
         let totalDiscountedPrice = sut.totalPriceWithDiscount(for: mugList)
         XCTAssertEqual(15, totalDiscountedPrice)
     }
-
 
     //MARK: - Helpers
     

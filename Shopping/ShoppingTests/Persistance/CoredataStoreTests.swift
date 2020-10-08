@@ -9,7 +9,6 @@ import XCTest
 import Shopping
 
 class CoredataStoreTests: XCTestCase {
-    
     func test_retreiveNoValueWhenPersistenceEmpty() {
         let sut = makeSUT()
         
@@ -166,5 +165,4 @@ class CoredataStoreTests: XCTestCase {
         
         wait(for: [exp], timeout: 1.0)
     }
-
 }

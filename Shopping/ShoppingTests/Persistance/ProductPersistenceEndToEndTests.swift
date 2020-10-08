@@ -9,7 +9,6 @@ import XCTest
 import Shopping
 
 class ProductPersistenceEndToEndTests: XCTestCase {
-
     override func setUpWithError() throws {
         setupEmptyStoreState()
     }
@@ -105,6 +104,4 @@ class ProductPersistenceEndToEndTests: XCTestCase {
     private func cachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
-
-
 }

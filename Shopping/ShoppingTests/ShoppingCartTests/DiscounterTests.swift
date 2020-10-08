@@ -9,9 +9,6 @@ import XCTest
 import Shopping
 
 class DiscounterTests: XCTestCase {
-    // Asumming Discounts can apply at one kind of product at a time.
-    // Asumming products listed are all the same kind.
-    
     func test_BuyXGetYDiscountOnEmptyProductList() {
         let sut = makeSUT(with: .buyXGetY, itemsForDiscount: 1)
     

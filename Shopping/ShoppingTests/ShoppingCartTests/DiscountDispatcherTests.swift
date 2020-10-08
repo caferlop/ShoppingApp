@@ -9,7 +9,6 @@ import XCTest
 import Shopping
 
 class DiscountDispatcherTests: XCTestCase {
-
     func test_DiscountMatchProducts() {
         let sut = makeDiscountDispatcher()
         
@@ -22,5 +21,4 @@ class DiscountDispatcherTests: XCTestCase {
         let mug = Product(code: "MUG", name: "Cabify Mug", price: 20)
         XCTAssertEqual( NoDiscount(), sut.applyDiscountStrategy(for: mug) as! NoDiscount)
     }
-
 }

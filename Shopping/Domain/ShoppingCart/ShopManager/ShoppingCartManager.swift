@@ -8,7 +8,6 @@
 import Foundation
 
 public final class ShoppingCartManager: ShoppingCart {
-    
     private let calculator: PriceCalculator
     private var productList = [Product]()
     private var productsAvailable: [Product]
@@ -24,7 +23,6 @@ public final class ShoppingCartManager: ShoppingCart {
         processTransaction(for: product){ transaction in
             completion(transaction)
         }
-        
     }
     
     public func removeProduct(product: Product, completion: @escaping (TransactionResult) -> Void) {
@@ -56,7 +54,6 @@ public final class ShoppingCartManager: ShoppingCart {
             completion ((netPrice:totalNetPrice, discountedPrice: totalDiscountedPrice))
         }
     }
-    
     
     private func totalPriceWithoutDiscount(for matrixOfProduct: [[Product]]) -> Float {
         var priceList = [Float]()
@@ -91,6 +88,4 @@ public final class ShoppingCartManager: ShoppingCart {
         }
         return matrixOfProducts
     }
-    
-    
 }

@@ -9,7 +9,6 @@ import XCTest
 import Shopping
 
 class ShoppingCartTests: XCTestCase {
-    
     func test_AddOneVoucherProduct() {
         let sut = makeSUT()
         let voucher = Product(code: "VOUCHER", name: "Cabify Voucher", price: 5)
@@ -21,7 +20,6 @@ class ShoppingCartTests: XCTestCase {
         let voucher = Product(code: "VOUCHER", name: "Cabify Voucher", price: 5)
         expecTwice(sut: sut, product: voucher)
     }
-    
     
     func test_AddThreeVoucherProducts() {
         let sut = makeSUT()
@@ -64,7 +62,6 @@ class ShoppingCartTests: XCTestCase {
         expect(sut: sut, product: tshirt, toAddProduct: (netPrice: 60, discountedPrice: 57))
         expect(sut: sut, product: voucher, toAddProduct: (netPrice: 65, discountedPrice: 62))
         expect(sut: sut, product: tshirt, toAddProduct: (netPrice: 85, discountedPrice: 81))
-        
     }
     
     func test_ResultChallengeExample4() {
@@ -120,7 +117,6 @@ class ShoppingCartTests: XCTestCase {
     }
     
     private func expect(sut: ShoppingCart, product: Product, toAddProduct expectedResult: ShoppingCart.TransactionResult, file: StaticString = #file, line: UInt = #line) {
-        
         let exp = expectation(description: "Add product transactio fullfiled")
         
         sut.addProduct(product: product) { (ShoppingCartTransaction) in

@@ -8,7 +8,6 @@
 import Foundation
 
 public final class LocalProductLoader: ProductFeedLoader {
-    
     private let store: ProductFeedStore
     private let currentDate: () -> Date
     
@@ -51,7 +50,6 @@ extension LocalProductLoader {
             case let .failure(error):
                 completion(.failure(error))
             }
-            
         }
     }
     

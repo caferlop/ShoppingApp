@@ -9,7 +9,6 @@ import XCTest
 import Shopping
 
 class LoadProductFeedFromPersistenceTests: XCTestCase {
-    
     func test_load_requestValueRetrieval() {
         let (sut, store) = makeSUT()
         
@@ -59,7 +58,6 @@ class LoadProductFeedFromPersistenceTests: XCTestCase {
 //        XCTAssertTrue(receivedResults.isEmpty)
 //    }
 
-
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalProductLoader, store: ProductFeedStoreSpy) {
@@ -91,6 +89,4 @@ class LoadProductFeedFromPersistenceTests: XCTestCase {
         action()
         wait(for: [exp], timeout: 1.0)
     }
-    
-
 }

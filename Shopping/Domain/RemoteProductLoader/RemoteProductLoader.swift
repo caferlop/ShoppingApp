@@ -8,7 +8,6 @@
 import Foundation
 
 public final class RemoteProductLoader: ProductFeedLoader {
-    
     private let request: HTTPRequest
     private let client: HTTPClient
     

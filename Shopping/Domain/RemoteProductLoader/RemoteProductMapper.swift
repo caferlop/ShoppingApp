@@ -7,8 +7,7 @@
 
 import Foundation
 
-final class RemoteProductMapper {
-        
+final class RemoteProductMapper {        
     private struct Root: Decodable {
         let products: [RemoteProductItem]
     }

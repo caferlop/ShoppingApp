@@ -23,7 +23,6 @@ public struct DiscountDispatcher: DiscountStrategyDispatcher {
             return BulkDiscount(xItems: 3, valueDiscount: 1)
         case .none:
             return NoDiscount()
-            
         }
     }
     
