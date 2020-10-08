@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		9632D1762523C95600217E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D1752523C95600217E20 /* AppDelegate.swift */; };
 		9632D1782523C95600217E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D1772523C95600217E20 /* SceneDelegate.swift */; };
-		9632D17A2523C95600217E20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D1792523C95600217E20 /* ViewController.swift */; };
 		9632D17D2523C95600217E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D17B2523C95600217E20 /* Main.storyboard */; };
-		9632D1802523C95600217E20 /* ShoppingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9632D17E2523C95600217E20 /* ShoppingApp.xcdatamodeld */; };
 		9632D1822523C95800217E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9632D1812523C95800217E20 /* Assets.xcassets */; };
 		9632D1852523C95800217E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D1832523C95800217E20 /* LaunchScreen.storyboard */; };
 		9632D1902523C95800217E20 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D18F2523C95800217E20 /* ShoppingAppTests.swift */; };
@@ -22,6 +20,7 @@
 		965AF1BB252F15F90096AC97 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1BA252F15F90096AC97 /* ProductsTableView.swift */; };
 		965AF1C2252F16160096AC97 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1C0252F16160096AC97 /* ProductTableViewCell.swift */; };
 		965AF1C3252F16160096AC97 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965AF1C1252F16160096AC97 /* ProductTableViewCell.xib */; };
+		965AF1D5252F1B0C0096AC97 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1D4252F1B0C0096AC97 /* UIViewExtensions.swift */; };
 		969D307A252BADC300478074 /* Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; };
 		969D307B252BADC300478074 /* Shopping.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -61,9 +60,7 @@
 		9632D1722523C95600217E20 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632D1752523C95600217E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9632D1772523C95600217E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9632D1792523C95600217E20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9632D17C2523C95600217E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9632D17F2523C95600217E20 /* ShoppingApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingApp.xcdatamodel; sourceTree = "<group>"; };
 		9632D1812523C95800217E20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9632D1842523C95800217E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9632D1862523C95800217E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +76,7 @@
 		965AF1BA252F15F90096AC97 /* ProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
 		965AF1C0252F16160096AC97 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		965AF1C1252F16160096AC97 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		965AF1D4252F1B0C0096AC97 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		969D3079252BADC300478074 /* Shopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,12 +130,10 @@
 		9632D1742523C95600217E20 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				965AF1D1252F189E0096AC97 /* Helpers */,
 				965AF1A2252F125E0096AC97 /* AppConfig */,
 				965AF1A6252F12920096AC97 /* Scenes */,
 				965AF1A5252F12780096AC97 /* Assets */,
-				9632D1792523C95600217E20 /* ViewController.swift */,
-				9632D1862523C95800217E20 /* Info.plist */,
-				9632D17E2523C95600217E20 /* ShoppingApp.xcdatamodeld */,
 			);
 			path = ShoppingApp;
 			sourceTree = "<group>";
@@ -165,6 +161,7 @@
 			children = (
 				9632D1752523C95600217E20 /* AppDelegate.swift */,
 				9632D1772523C95600217E20 /* SceneDelegate.swift */,
+				9632D1862523C95800217E20 /* Info.plist */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -232,6 +229,14 @@
 			path = ProductsCell;
 			sourceTree = "<group>";
 		};
+		965AF1D1252F189E0096AC97 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1D4252F1B0C0096AC97 /* UIViewExtensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		969D3078252BADC300478074 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +256,7 @@
 				9632D16F2523C95600217E20 /* Frameworks */,
 				9632D1702523C95600217E20 /* Resources */,
 				969D307C252BADC300478074 /* Embed Frameworks */,
+				965AF1CC252F18220096AC97 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -368,15 +374,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		965AF1CC252F18220096AC97 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nTAGS=\"TODO:|FIXME:|WARNING:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"| perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9632D16E2523C95600217E20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9632D17A2523C95600217E20 /* ViewController.swift in Sources */,
 				965AF1C2252F16160096AC97 /* ProductTableViewCell.swift in Sources */,
+				965AF1D5252F1B0C0096AC97 /* UIViewExtensions.swift in Sources */,
 				965AF1AE252F147D0096AC97 /* TotalPriceView.swift in Sources */,
-				9632D1802523C95600217E20 /* ShoppingApp.xcdatamodeld in Sources */,
 				965AF1BB252F15F90096AC97 /* ProductsTableView.swift in Sources */,
 				9632D1762523C95600217E20 /* AppDelegate.swift in Sources */,
 				9632D1782523C95600217E20 /* SceneDelegate.swift in Sources */,
@@ -559,7 +584,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SGKG4PBBP;
-				INFOPLIST_FILE = ShoppingApp/Info.plist;
+				INFOPLIST_FILE = ShoppingApp/AppConfig/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,7 +606,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SGKG4PBBP;
-				INFOPLIST_FILE = ShoppingApp/Info.plist;
+				INFOPLIST_FILE = ShoppingApp/AppConfig/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -715,19 +740,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9632D17E2523C95600217E20 /* ShoppingApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9632D17F2523C95600217E20 /* ShoppingApp.xcdatamodel */,
-			);
-			currentVersion = 9632D17F2523C95600217E20 /* ShoppingApp.xcdatamodel */;
-			path = ShoppingApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9632D16A2523C95600217E20 /* Project object */;
 }
