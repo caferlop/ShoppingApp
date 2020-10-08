@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ShoppingViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzs-Sn-sfK" userLabel="ShoppingCart">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="481.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnG-VB-V7W" userLabel="ProductTableView">
-                                <rect key="frame" x="0.0" y="480" width="1366" height="524"/>
+                                <rect key="frame" x="0.0" y="319" width="375" height="348"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                             </view>
                         </subviews>
@@ -40,7 +40,9 @@
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="MR6-ZE-PAn"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qc7-Es-9A8"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Wky-BF-WXz"/>
-                            <constraint firstAttribute="bottom" secondItem="LnG-VB-V7W" secondAttribute="bottom" id="YGt-fy-ZTN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LnG-VB-V7W" secondAttribute="bottom" id="YGt-fy-ZTN">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.47976" id="geK-eP-ovE"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="l9n-TF-Wem"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pTC-pW-mjz"/>
@@ -69,14 +71,14 @@
                                 <exclude reference="60p-Fr-mq1"/>
                                 <include reference="FOt-a0-a3Q"/>
                                 <exclude reference="HVy-mU-eht"/>
-                                <include reference="Wky-BF-WXz"/>
+                                <exclude reference="Wky-BF-WXz"/>
                                 <exclude reference="geK-eP-ovE"/>
                                 <exclude reference="s4G-H3-dwp"/>
                                 <include reference="zfu-Aq-wLG"/>
                                 <exclude reference="2WF-rc-8hR"/>
                                 <exclude reference="7uk-YC-jeF"/>
                                 <include reference="Btu-Xr-MIg"/>
-                                <include reference="MR6-ZE-PAn"/>
+                                <exclude reference="MR6-ZE-PAn"/>
                                 <include reference="Qc7-Es-9A8"/>
                                 <include reference="YGt-fy-ZTN"/>
                                 <include reference="l9n-TF-Wem"/>
