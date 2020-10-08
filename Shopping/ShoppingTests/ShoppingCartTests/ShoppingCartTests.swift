@@ -137,6 +137,4 @@ class ShoppingCartTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1)
     }
-    
-
 }

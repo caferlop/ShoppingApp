@@ -16,6 +16,12 @@
 		9632D1852523C95800217E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D1832523C95800217E20 /* LaunchScreen.storyboard */; };
 		9632D1902523C95800217E20 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D18F2523C95800217E20 /* ShoppingAppTests.swift */; };
 		9632D19B2523C95800217E20 /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632D19A2523C95800217E20 /* ShoppingAppUITests.swift */; };
+		965AF1A9252F12F90096AC97 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1A8252F12F90096AC97 /* ShoppingViewController.swift */; };
+		965AF1AE252F147D0096AC97 /* TotalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1AD252F147D0096AC97 /* TotalPriceView.swift */; };
+		965AF1B4252F14910096AC97 /* TotalPriceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965AF1B3252F14910096AC97 /* TotalPriceView.xib */; };
+		965AF1BB252F15F90096AC97 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1BA252F15F90096AC97 /* ProductsTableView.swift */; };
+		965AF1C2252F16160096AC97 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AF1C0252F16160096AC97 /* ProductTableViewCell.swift */; };
+		965AF1C3252F16160096AC97 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965AF1C1252F16160096AC97 /* ProductTableViewCell.xib */; };
 		969D307A252BADC300478074 /* Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; };
 		969D307B252BADC300478074 /* Shopping.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969D3079252BADC300478074 /* Shopping.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -67,6 +73,12 @@
 		9632D1962523C95800217E20 /* ShoppingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632D19A2523C95800217E20 /* ShoppingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITests.swift; sourceTree = "<group>"; };
 		9632D19C2523C95800217E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		965AF1A8252F12F90096AC97 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		965AF1AD252F147D0096AC97 /* TotalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceView.swift; sourceTree = "<group>"; };
+		965AF1B3252F14910096AC97 /* TotalPriceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalPriceView.xib; sourceTree = "<group>"; };
+		965AF1BA252F15F90096AC97 /* ProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
+		965AF1C0252F16160096AC97 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		965AF1C1252F16160096AC97 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		969D3079252BADC300478074 /* Shopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,12 +132,10 @@
 		9632D1742523C95600217E20 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
-				9632D1752523C95600217E20 /* AppDelegate.swift */,
-				9632D1772523C95600217E20 /* SceneDelegate.swift */,
+				965AF1A2252F125E0096AC97 /* AppConfig */,
+				965AF1A6252F12920096AC97 /* Scenes */,
+				965AF1A5252F12780096AC97 /* Assets */,
 				9632D1792523C95600217E20 /* ViewController.swift */,
-				9632D17B2523C95600217E20 /* Main.storyboard */,
-				9632D1812523C95800217E20 /* Assets.xcassets */,
-				9632D1832523C95800217E20 /* LaunchScreen.storyboard */,
 				9632D1862523C95800217E20 /* Info.plist */,
 				9632D17E2523C95600217E20 /* ShoppingApp.xcdatamodeld */,
 			);
@@ -148,6 +158,78 @@
 				9632D19C2523C95800217E20 /* Info.plist */,
 			);
 			path = ShoppingAppUITests;
+			sourceTree = "<group>";
+		};
+		965AF1A2252F125E0096AC97 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				9632D1752523C95600217E20 /* AppDelegate.swift */,
+				9632D1772523C95600217E20 /* SceneDelegate.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		965AF1A5252F12780096AC97 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9632D17B2523C95600217E20 /* Main.storyboard */,
+				9632D1812523C95800217E20 /* Assets.xcassets */,
+				9632D1832523C95800217E20 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		965AF1A6252F12920096AC97 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1A7252F12980096AC97 /* ShoppingCart */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		965AF1A7252F12980096AC97 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1AC252F13110096AC97 /* Views */,
+				965AF1A8252F12F90096AC97 /* ShoppingViewController.swift */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		965AF1AC252F13110096AC97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1B8252F15610096AC97 /* ProductsTableView */,
+				965AF1B7252F154A0096AC97 /* TotalPriceView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		965AF1B7252F154A0096AC97 /* TotalPriceView */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1AD252F147D0096AC97 /* TotalPriceView.swift */,
+				965AF1B3252F14910096AC97 /* TotalPriceView.xib */,
+			);
+			path = TotalPriceView;
+			sourceTree = "<group>";
+		};
+		965AF1B8252F15610096AC97 /* ProductsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1B9252F15930096AC97 /* ProductsCell */,
+				965AF1BA252F15F90096AC97 /* ProductsTableView.swift */,
+			);
+			path = ProductsTableView;
+			sourceTree = "<group>";
+		};
+		965AF1B9252F15930096AC97 /* ProductsCell */ = {
+			isa = PBXGroup;
+			children = (
+				965AF1C0252F16160096AC97 /* ProductTableViewCell.swift */,
+				965AF1C1252F16160096AC97 /* ProductTableViewCell.xib */,
+			);
+			path = ProductsCell;
 			sourceTree = "<group>";
 		};
 		969D3078252BADC300478074 /* Frameworks */ = {
@@ -263,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9632D1852523C95800217E20 /* LaunchScreen.storyboard in Resources */,
+				965AF1B4252F14910096AC97 /* TotalPriceView.xib in Resources */,
+				965AF1C3252F16160096AC97 /* ProductTableViewCell.xib in Resources */,
 				9632D1822523C95800217E20 /* Assets.xcassets in Resources */,
 				9632D17D2523C95600217E20 /* Main.storyboard in Resources */,
 			);
@@ -290,9 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9632D17A2523C95600217E20 /* ViewController.swift in Sources */,
+				965AF1C2252F16160096AC97 /* ProductTableViewCell.swift in Sources */,
+				965AF1AE252F147D0096AC97 /* TotalPriceView.swift in Sources */,
 				9632D1802523C95600217E20 /* ShoppingApp.xcdatamodeld in Sources */,
+				965AF1BB252F15F90096AC97 /* ProductsTableView.swift in Sources */,
 				9632D1762523C95600217E20 /* AppDelegate.swift in Sources */,
 				9632D1782523C95600217E20 /* SceneDelegate.swift in Sources */,
+				965AF1A9252F12F90096AC97 /* ShoppingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SGKG4PBBP;
 				INFOPLIST_FILE = ShoppingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SGKG4PBBP;
 				INFOPLIST_FILE = ShoppingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
