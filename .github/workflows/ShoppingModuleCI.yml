@@ -1,11 +1,9 @@
 name: ShoppingModuleCI
 #Workflow triggered on pushes
-
 on:
   push:
     branches: [master]
-
-
+# Run the next jobs
 jobs:
   # This workflow contains a single job called "build"
   build-and-test:
