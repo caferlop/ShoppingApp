@@ -35,7 +35,7 @@ class TotalPriceView: UIView {
     func setupView() {
         guard let ContainerView = self.fromNib() else { fatalError("View could not load from nib") }
         addSubview(ContainerView)
-        self.backgroundColor = UIColor.appColor(.primaryBackground)
+        self.backgroundColor = UIColor.appColor(.prim)
         self.checkOutButton.roundCorners(corners: [.allCorners], radius: 10)
     }
 

@@ -20,8 +20,8 @@ final class ShoppingViewController: UIViewController {
         super.viewDidLoad()
         self.productsTableView.setUpTableView()
         self.view.setGradientBackgroundColor(
-            colorTop: UIColor.appColor(.primaryBackground),
-            colorBottom: UIColor.appColor(.secondaryBackground)
+            colorTop: UIColor.appColor(.prim),
+            colorBottom: UIColor.appColor(.second)
         )
         setUpBindings()
         setUpActions()

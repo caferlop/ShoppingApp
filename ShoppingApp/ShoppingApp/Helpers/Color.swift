@@ -10,6 +10,8 @@ import UIKit
 enum AssetsColor: String {
     case primaryBackground
     case secondaryBackground
+    case prim
+    case second
 }
 
 extension UIColor {
