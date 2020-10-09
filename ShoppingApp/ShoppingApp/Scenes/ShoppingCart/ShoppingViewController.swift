@@ -97,7 +97,4 @@ final class ShoppingViewController: UIViewController {
             self?.viewModel?.loadProducts()
         }
     }
-    
-    
-    
 }
