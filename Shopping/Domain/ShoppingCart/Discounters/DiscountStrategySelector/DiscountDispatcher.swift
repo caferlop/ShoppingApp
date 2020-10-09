@@ -8,6 +8,7 @@
 import Foundation
 
 public struct DiscountDispatcher: DiscountStrategyDispatcher {
+
     private let discountsAvailable: [Discount]
     
     public init (discountsAvailable: [Discount]) {
@@ -26,7 +27,7 @@ public struct DiscountDispatcher: DiscountStrategyDispatcher {
         }
     }
     
-    private func getDiscountStrategy(for product: Product) -> Discounts {
+     private func getDiscountStrategy(for product: Product) -> Discounts {
         var discountType: Discounts = .none
         self.discountsAvailable.forEach {
             if ($0.productsToApply.first { $0.code == product.code } != nil) {

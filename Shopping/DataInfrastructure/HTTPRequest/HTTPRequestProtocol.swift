@@ -40,7 +40,7 @@ extension HTTPRequest {
 }
 
 // Define a non optional URL
-//TODO: Re-think the use of optional URL as in the future it is possible to have URL composed dynamically
+// The use of optional URL as in the future it is possible to have URL composed dynamically
 extension URL {
     init(staticString string: StaticString) {
         guard let url = URL(string: "\(string)") else {

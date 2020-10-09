@@ -8,14 +8,24 @@
 import Foundation
 
 public final class ShoppingCartManager: ShoppingCart {
+    public var priceCalculator: PriceCalculator {
+        return calculator
+    }
     private let calculator: PriceCalculator
     private var productList = [Product]()
-    private var productsAvailable: [Product]
-    
+    private var availableProducts: [Product]
+    public var productsAvailable: [Product] {
+        get {
+            return availableProducts
+        }
+        set {
+            availableProducts = newValue
+        }
+    }
     
     public init (calculator: PriceCalculator, productsAvailable: [Product]) {
         self.calculator = calculator
-        self.productsAvailable = productsAvailable
+        self.availableProducts = productsAvailable
     }
     
     public func addProduct(product: Product, completion: @escaping (TransactionResult) -> Void)  {
@@ -48,10 +58,10 @@ public final class ShoppingCartManager: ShoppingCart {
         }
         
         var totalDiscountedPrice: Float = 0.0
-        
         processQueue.async(qos: .userInteractive, flags: .barrier) {
             totalDiscountedPrice = self.totalPriceWithDiscount(for: productMatrix)
-            completion ((netPrice:totalNetPrice, discountedPrice: totalDiscountedPrice))
+            let discount = totalNetPrice - totalDiscountedPrice
+            completion ((netPrice:totalNetPrice, discountedPrice: totalDiscountedPrice, discount: discount))
         }
     }
     
@@ -77,7 +87,7 @@ public final class ShoppingCartManager: ShoppingCart {
     
     private func productSorter(product: Product)-> [[Product]] {
         var matrixOfProducts = [[Product]]()
-        productsAvailable.forEach { productStocked in
+        availableProducts.forEach { productStocked in
             var productsSorted = [Product]()
             productList.forEach { product in
                 if productStocked.code == product.code {

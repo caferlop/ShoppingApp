@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9632D1C22523C9E000217E20 /* Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9632D1B82523C9DF00217E20 /* Shopping.framework */; };
+		964EF451252FB2BF003ED35C /* ProductFeedPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964EF450252FB2BF003ED35C /* ProductFeedPersister.swift */; };
 		965BA628252E666B0035F750 /* ShoppingCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965BA627252E666B0035F750 /* ShoppingCartTests.swift */; };
 		969D300C252B6B2600478074 /* HTTPRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D300B252B6B2600478074 /* HTTPRequestProtocol.swift */; };
 		969D301C252B6FCA00478074 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D301B252B6FCA00478074 /* HTTPClient.swift */; };
@@ -69,6 +70,7 @@
 		9632D1BC2523C9DF00217E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9632D1C12523C9E000217E20 /* ShoppingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632D1C82523C9E000217E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		964EF450252FB2BF003ED35C /* ProductFeedPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeedPersister.swift; sourceTree = "<group>"; };
 		965BA627252E666B0035F750 /* ShoppingCartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTests.swift; sourceTree = "<group>"; };
 		969D300B252B6B2600478074 /* HTTPRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestProtocol.swift; sourceTree = "<group>"; };
 		969D301B252B6FCA00478074 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				969D319A252E463500478074 /* Discount.swift */,
 				969D3080252BAEFA00478074 /* Product.swift */,
 				969D3086252BAF0A00478074 /* ProductFeedLoader.swift */,
+				964EF450252FB2BF003ED35C /* ProductFeedPersister.swift */,
 			);
 			path = ProductFeed;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				969D3087252BAF0A00478074 /* ProductFeedLoader.swift in Sources */,
 				969D3099252BB25400478074 /* RemoteProductMapper.swift in Sources */,
 				969D300C252B6B2600478074 /* HTTPRequestProtocol.swift in Sources */,
+				964EF451252FB2BF003ED35C /* ProductFeedPersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

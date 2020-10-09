@@ -8,37 +8,24 @@
 import UIKit
 
 extension UIView {
-    class func fromNib<T: UIView>() -> T {
-        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
-    }
     
-    func addSubviewWithConstraints(attributes: [NSLayoutConstraint.Attribute], parentView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        parentView.insertSubview(self, aboveSubview: parentView)
-        
-        for attribute in attributes {
-            parentView.addConstraint(NSLayoutConstraint(
-                item: self,
-                attribute: attribute,
-                relatedBy: .equal,
-                toItem: parentView,
-                attribute: attribute,
-                multiplier: 1.0,
-                constant: 0.0)
-            )
+    @discardableResult
+    func fromNib<T : UIView>() -> T? {
+        guard let contentView = Bundle(for: type(of: self))
+            .loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? T else {
+            return nil
         }
+        return contentView
     }
     
-    func setGradientBackgroundColor(colorTop: UIColor, colorBottom: UIColor, cornerRadius: CGFloat) {
+    func setGradientBackgroundColor(frame: CGRect? = nil ,colorTop: UIColor, colorBottom: UIColor) {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.locations = [0, 1]
-        gradientLayer.frame = bounds
-        gradientLayer.cornerRadius = cornerRadius
-
+        if let externalframe = frame {
+            gradientLayer.frame = externalframe
+        } else {
+            gradientLayer.frame = bounds
+        }
+        gradientLayer.colors = [colorTop.cgColor, colorBottom.cgColor]
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
@@ -56,6 +43,21 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
+    }
+    
+    func rotate(degrees: CGFloat) {
+        rotate(radians: CGFloat.pi * degrees / 180.0)
+    }
+
+    func rotate(radians: CGFloat) {
+        self.transform = CGAffineTransform(rotationAngle: radians)
+    }
+}
+
+extension UITableView {
+    func registerCell(for identifier: String) {
+        let nib = UINib.init(nibName: identifier, bundle: nil)
+        register(nib, forCellReuseIdentifier: identifier)
     }
 }
 

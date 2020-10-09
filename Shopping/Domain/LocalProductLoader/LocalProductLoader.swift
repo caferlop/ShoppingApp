@@ -29,14 +29,14 @@ public final class LocalProductLoader: ProductFeedLoader {
                 completion(.success(cache.feed.toModels()))
                 
             case .success(.none):
-                completion(.success([]))
+                completion(.failure(NSError(domain: "No products found", code: 0)))
             }
         }
         
     }
 }
 
-extension LocalProductLoader {
+extension LocalProductLoader: ProductFeedPersister {
     public typealias SaveResult = Result<Void, Error>
     
     public func save(productFeed: [Product], completion : @escaping (SaveResult) -> Void) {

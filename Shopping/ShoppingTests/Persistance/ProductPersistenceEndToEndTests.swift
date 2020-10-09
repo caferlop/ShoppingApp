@@ -17,12 +17,6 @@ class ProductPersistenceEndToEndTests: XCTestCase {
         undoStoreSideEffects()
     }
     
-    func test_loadReturnsNoProductsOnEmptyPersistence() {
-        let sut = makeSUT()
-        
-        expect(sut: sut, toLoad: [])
-    }
-    
     func test_loadReturnsProductsSavedInADifferenteInstance() {
         let sutToPerformSave = makeSUT()
         let sutToPerformLoad = makeSUT()

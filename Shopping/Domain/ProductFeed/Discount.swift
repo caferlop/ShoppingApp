@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Discount {
-    let type: Discounts
-    let productsToApply: [Product]
+    public let type: Discounts
+    public let productsToApply: [Product]
     
     public init (type: Discounts, productsToApply: [Product]) {
         self.type = type

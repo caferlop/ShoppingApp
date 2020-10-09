@@ -26,10 +26,11 @@ class LoadProductFeedFromPersistenceTests: XCTestCase {
             store.completeRetrieval(with: randomError)
         }
     }
+    
     func test_load_returnsNoProductOnEmptyPersitence() {
         let (sut, store) = makeSUT()
         
-        expect(sut: sut, toCompleteWith: .success([])) {
+        expect(sut: sut, toCompleteWith: .failure(NSError(domain: "No products found", code: 0))) {
             store.completeRetrievalWithEmptyCache()
         }
     }
@@ -42,21 +43,6 @@ class LoadProductFeedFromPersistenceTests: XCTestCase {
             store.completeRetrieval(with: productFeed.local, timeStamp: Date())
         }
     }
-    
-//    func test_load_returnsNoValuesAfterSUTIsDeallocated() {
-//        let store = ProductFeedStoreSpy()
-//        var sut: LocalProductLoader? = LocalProductLoader(store: store, currentDate: Date.init)
-//
-//        var receivedResults = [LocalProductLoader.LoadProductResult]()
-//
-//        sut?.load(completion: { receivedResults.append($0) })
-//
-//        sut = nil
-//
-//        store.completeRetrievalWithEmptyCache()
-//
-//        XCTAssertTrue(receivedResults.isEmpty)
-//    }
 
     // MARK: - Helpers
     

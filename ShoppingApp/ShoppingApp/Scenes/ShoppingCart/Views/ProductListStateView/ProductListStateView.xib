@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductListStateView" customModule="ShoppingApp" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="3RO-4k-tf6" id="nML-XA-w2A"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="sz4-zf-Plp"/>
+                <outlet property="errorLabel" destination="YI6-Fb-Xag" id="BIB-cP-ZSv"/>
+                <outlet property="spinner" destination="bZo-VJ-N8k" id="Qhd-3n-gyp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bZo-VJ-N8k">
+                    <rect key="frame" x="141.5" y="128.5" width="37" height="37"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tq3-SP-i9H">
+                    <rect key="frame" x="8" y="107" width="304" height="80.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YI6-Fb-Xag">
+                            <rect key="frame" x="103" y="0.0" width="98" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RO-4k-tf6">
+                            <rect key="frame" x="87" y="50.5" width="130" height="30"/>
+                            <color key="backgroundColor" red="0.2409799695" green="0.54342365260000003" blue="0.6196209788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="130" id="avf-bs-gQs"/>
+                                <constraint firstAttribute="height" constant="30" id="h0v-z6-EoN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                            <state key="normal" title="Retry">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonAction:" destination="-1" eventType="touchUpInside" id="Ubc-Hm-DxF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="tq3-SP-i9H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="3Y3-N3-ZdJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tq3-SP-i9H" secondAttribute="trailing" constant="8" id="VWn-RU-UAe"/>
+                <constraint firstItem="tq3-SP-i9H" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Y1D-dG-CtG"/>
+                <constraint firstItem="bZo-VJ-N8k" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ap7-Um-2Dj"/>
+                <constraint firstItem="bZo-VJ-N8k" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="kxd-vX-eLV"/>
+                <constraint firstItem="tq3-SP-i9H" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="xOz-SA-sME"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="123.18840579710145" y="345.53571428571428"/>
+        </view>
+    </objects>
+</document>

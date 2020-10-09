@@ -9,7 +9,7 @@ import Foundation
 
 public struct Calculator: PriceCalculator {
     private let discountDispatcher: DiscountStrategyDispatcher
-    
+
     public init(discountDispatcher: DiscountStrategyDispatcher) {
         self.discountDispatcher = discountDispatcher
     }

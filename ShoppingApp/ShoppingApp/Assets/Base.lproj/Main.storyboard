@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,20 +13,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ShoppingViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzs-Sn-sfK" userLabel="ShoppingCart">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQj-qj-w7n" userLabel="ProductsTableView" customClass="ProductsTableView" customModule="ShoppingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="229.5" width="320" height="250.5"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnG-VB-V7W" userLabel="ProductTableView">
-                                <rect key="frame" x="0.0" y="319" width="375" height="348"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnG-VB-V7W" userLabel="ProductListStateView" customClass="ProductListStateView" customModule="ShoppingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="229.5" width="320" height="250.5"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzs-Sn-sfK" userLabel="ShoppingCart" customClass="TotalPriceView" customModule="ShoppingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230.5"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="0U4-W4-DHY"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Sw-xY-c6q"/>
@@ -35,37 +35,54 @@
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="60p-Fr-mq1"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7uk-YC-jeF"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Btu-Xr-MIg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BQj-qj-w7n" secondAttribute="bottom" id="CF0-dH-IrG"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FOt-a0-a3Q"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HVy-mU-eht"/>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="KqQ-20-eZy"/>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L75-ks-KTk"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="MR6-ZE-PAn"/>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="OQz-fO-ox1"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qc7-Es-9A8"/>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SM0-NH-Au6"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Wky-BF-WXz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LnG-VB-V7W" secondAttribute="bottom" id="YGt-fy-ZTN">
                                 <variation key="heightClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.521875" id="d6Y-Kp-N4U"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.47976" id="geK-eP-ovE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BQj-qj-w7n" secondAttribute="trailing" id="kNd-9M-ZCf"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="l9n-TF-Wem"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pTC-pW-mjz"/>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="q38-5d-iI3"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s4G-H3-dwp"/>
+                            <constraint firstItem="BQj-qj-w7n" firstAttribute="leading" secondItem="LnG-VB-V7W" secondAttribute="leading" id="vlb-bQ-xbq"/>
                             <constraint firstItem="LnG-VB-V7W" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.521739" id="zF7-M2-XOd"/>
                             <constraint firstItem="Pzs-Sn-sfK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zfu-Aq-wLG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="CF0-dH-IrG"/>
+                                <exclude reference="YGt-fy-ZTN"/>
+                                <exclude reference="kNd-9M-ZCf"/>
                                 <exclude reference="0U4-W4-DHY"/>
                                 <exclude reference="2Sw-xY-c6q"/>
                                 <exclude reference="FOt-a0-a3Q"/>
                                 <exclude reference="Wky-BF-WXz"/>
                                 <exclude reference="zfu-Aq-wLG"/>
+                                <exclude reference="OQz-fO-ox1"/>
+                                <exclude reference="SM0-NH-Au6"/>
+                                <exclude reference="vlb-bQ-xbq"/>
                                 <exclude reference="Btu-Xr-MIg"/>
                                 <exclude reference="MR6-ZE-PAn"/>
                                 <exclude reference="Qc7-Es-9A8"/>
-                                <exclude reference="YGt-fy-ZTN"/>
                                 <exclude reference="l9n-TF-Wem"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="CF0-dH-IrG"/>
+                                <include reference="YGt-fy-ZTN"/>
+                                <include reference="kNd-9M-ZCf"/>
                                 <include reference="0U4-W4-DHY"/>
                                 <include reference="2Sw-xY-c6q"/>
                                 <exclude reference="60p-Fr-mq1"/>
@@ -75,33 +92,32 @@
                                 <exclude reference="geK-eP-ovE"/>
                                 <exclude reference="s4G-H3-dwp"/>
                                 <include reference="zfu-Aq-wLG"/>
+                                <exclude reference="KqQ-20-eZy"/>
+                                <exclude reference="L75-ks-KTk"/>
+                                <include reference="OQz-fO-ox1"/>
+                                <include reference="SM0-NH-Au6"/>
+                                <exclude reference="q38-5d-iI3"/>
+                                <include reference="vlb-bQ-xbq"/>
                                 <exclude reference="2WF-rc-8hR"/>
                                 <exclude reference="7uk-YC-jeF"/>
                                 <include reference="Btu-Xr-MIg"/>
                                 <exclude reference="MR6-ZE-PAn"/>
                                 <include reference="Qc7-Es-9A8"/>
-                                <include reference="YGt-fy-ZTN"/>
                                 <include reference="l9n-TF-Wem"/>
                                 <exclude reference="pTC-pW-mjz"/>
                                 <exclude reference="zF7-M2-XOd"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="productListStateView" destination="LnG-VB-V7W" id="f3Z-iB-QNH"/>
+                        <outlet property="productsTableView" destination="BQj-qj-w7n" id="Vtj-Lb-W8n"/>
+                        <outlet property="shoppingCartView" destination="Pzs-Sn-sfK" id="6jJ-cK-RRy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.48275862068968" y="76"/>
+            <point key="canvasLocation" x="132.5" y="75"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
